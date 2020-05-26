@@ -9,9 +9,10 @@ class PostsController < ApplicationController
 
   def update
 
-    @post.title = post_params['title']
-    @post.content = post_params['content']
-    @post.category = post_params['category']
+    @post.attributes.each do |attr_name, attr_value|
+      @post.title = post_params['title']
+    #@post.content = post_params['content']
+    #@post.category = post_params['category']
 
     if @post.valid?
       @post.save
