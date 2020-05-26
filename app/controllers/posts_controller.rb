@@ -10,7 +10,8 @@ class PostsController < ApplicationController
   def update
 
     @post.attributes.each do |attr_name, attr_value|
-      @post.title = post_params['title']
+      @post.attributes.attr_name = post_params[attr_name]
+    end
     #@post.content = post_params['content']
     #@post.category = post_params['category']
 
