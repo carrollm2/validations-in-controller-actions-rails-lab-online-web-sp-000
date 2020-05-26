@@ -9,6 +9,10 @@ class PostsController < ApplicationController
 
   def update
 
+    @post.title = post_params['title']
+    @post.content = post_params['content']
+    @post.category = post_params['category']
+
     if @post.valid?
       @post.update(post_params)
       redirect_to post_path(@post)
